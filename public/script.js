@@ -1,9 +1,23 @@
-const loginForm = document.querySelector("form");
+const form = document.querySelector("form");
 
-if (loginForm) {
-    loginForm.addEventListener("submit", function (e){
-        e.preventDefault();
-    
-    window.location.href = "dashboard.html";
- });
-}
+form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const username = document.querySelector("#username").value;
+    const password = document.querySelector("#password").value; 
+
+    const response = await fetch("/auth/login", {
+        method: "POST",
+        headers: {
+            "content-type": "application/json"
+        },
+        body: JSON.stringify({ username, password })
+    });
+
+    const data = await response.json();
+    alert(data.message);
+
+    if (response.ok) {
+        window.location.href = "dashboard.html";
+    }
+});
