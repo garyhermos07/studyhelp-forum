@@ -2,7 +2,7 @@
 ## Software Engineering Bootcamp Project 4 - Node.js Express Forum
 
 ## Description
-StudyHelp Forum is a web application where users can register, log in, and post progamming questions. User can also view and delete questions. The project use Node.js, Express, MongoDB, HTML CS, and JavaScript.
+StudyHelp Forum is a web application where users can register, log in, and post progamming questions. User can also view and delete questions. The project use Node.js, Express, MongoDB, HTML, CSS, and JavaScript.
 
 ## Features
 
