@@ -38,4 +38,24 @@ router.delete("/:id", async (req, res) => {
     }
 });
 
+router.post("/edit/:id", async (req, res) => {
+    try {
+        const { title, content } = req.body;
+
+        await Question.findByIdAndUpdate(req.params.id, {
+            title,
+            content
+        });
+
+        res.json({
+            message: "Question updated successfully!"
+        });
+
+    } catch (err) {
+        res.status(500).json({
+            message: "Update failed"
+        });
+    }
+});
+
 module.exports = router;
